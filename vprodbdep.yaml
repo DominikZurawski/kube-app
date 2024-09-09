@@ -28,9 +28,9 @@ spec:
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
-              secretKeyRef:
-                name: app-secret
-                key: db-pass
+                secretKeyRef:
+                  name: app-secret
+                  key: db-pass
       nodeSelector:
         zone: eu-north-1a
       volumes:
@@ -45,4 +45,4 @@ spec:
           args: ["rm", "-rf", "/var/lib/mysql/lost+found"]
           volumeMounts:
             - name: vpro-db-data
-              mountPath: /var/Lib/mysql
+              mountPath: /var/lib/mysql
